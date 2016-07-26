@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <script type="text/javascript" src="src/patterns.js"></script>
+        <script type="text/javascript" src="src/board.js"></script>
+        <script type="text/javascript" src="src/game.js"></script>
+    </head>
+    <body>
+        <div>
+            <button id="play">Play</button>
+            <button id="stop">Stop</button>
+            <button id="clear">Clear</button>
+        </div>
+        <div>
+            <button id="random">Random</button>
+            <button id="blinker">Blinker</button>
+            <button id="gospel">Gospel glider gun</button>
+        </div>
+        <hr />
+        <div>
+            <canvas id="gameoflife" width="1280" height="720">
+        </div>
+    </body>
+    <script type="text/javascript">
+        var canvas = document.getElementById("gameoflife"),
+            play = document.getElementById("play"),
+            stop = document.getElementById("stop"),
+            clear = document.getElementById("clear"),
+            random = document.getElementById("random"),
+            blinker = document.getElementById("blinker"),
+            gospel = document.getElementById("gospel"),
+            gol = new Game(canvas);
+
+        play.onclick = function() {
+            gol.start();
+        };
+        stop.onclick = function() {
+            gol.stop();
+        };
+        clear.onclick = function() {
+            gol.clear();
+        };
+
+        random.onclick = function() {
+            patterns.Random(gol);
+            gol.render();
+        };
+        blinker.onclick = function() {
+            patterns.Blinker(gol);
+            gol.render();
+        };
+        gospel.onclick = function() {
+            patterns.Gospel(gol);
+            gol.render();
+        };
+    </script>
+</html>
