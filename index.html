@@ -31,6 +31,8 @@
             blinker = document.getElementById("blinker"),
             gospel = document.getElementById("gospel"),
             gol = new Game(canvas);
+        patterns.Random(gol);
+        gol.render();
 
         play.onclick = function() {
             gol.start();

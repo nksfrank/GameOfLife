@@ -21,8 +21,7 @@ function Board() {
 
     //Note: false is error
     this.isAliveAt = function(x, y) {
-        if(x >= 0 && y >= 0 && x < this.x && y < this.y) return this.tiles[this.getIndex(x,y)];
-        return 0;
+        return x >= 0 && y >= 0 && x < this.x && y < this.y && this.tiles[this.getIndex(x,y)];
     };
 
     this.getPosY = function(index) {
